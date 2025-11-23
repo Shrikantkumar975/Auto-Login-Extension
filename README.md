@@ -10,7 +10,7 @@ This is a Chrome Extension designed to automatically log users into the LPU WiFi
 *   **Key Details:**
     *   **Manifest Version:** 3 (Modern Chrome standard).
     *   **Permissions:** `storage` (saving passwords), `activeTab` (interacting with current tab), `scripting`, `notifications`.
-    *   **Host Permissions:** Grants access to `10.10.0.1` and `*.lpu.in`.
+    *   **Host Permissions:** Grants access to `10.10.0.1` and `*internet.lpu.in*`.
     *   **Background:** Defines `background.js` as the service worker.
     *   **Content Scripts:** Inject `content.js` into LPU login pages.
 
