@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "LPU WiFi Auto Login",
+  "version": "1.0",
+  "description": "Automatically logs in to LPU WiFi.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://10.10.0.1/*",
+    "*://10.10.0.1/*",
+    "*://internet.lpu.in/*"
+  ],
+  "icons": {
+    "16": "icons/icon128.png",
+    "48": "icons/icon128.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LPU WiFi Login Settings",
+    "default_icon": {
+      "16": "icons/icon128.png",
+      "48": "icons/icon128.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://10.10.0.1/*",
+        "*://10.10.0.1/*",
+        "*://internet.lpu.in/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
